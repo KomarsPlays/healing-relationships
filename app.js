@@ -134,7 +134,7 @@ function openMessengerModal() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         // Yandex Metrika goal: modal opened
-        if (typeof ym !== 'undefined') ym(COUNTER_ID, 'reachGoal', 'click_messenger_modal');
+        if (typeof ym !== 'undefined') ym(108266859, 'reachGoal', 'click_messenger_modal');
     }
 }
 
