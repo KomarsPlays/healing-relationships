@@ -1798,6 +1798,11 @@ body::before {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 
+    .hero {
+        min-height: auto;
+        padding: 80px 0 40px;
+    }
+
     .hero::before,
     .hero::after {
         display: none;
