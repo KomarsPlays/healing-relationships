@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp files
+_find_imgs.py
+*.pyc
+__pycache__/
+
+# Editor files
+.vscode/
+.idea/
+
+# Python OG generator (dev only)
+img/generate_og.py
