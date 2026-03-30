@@ -349,12 +349,14 @@ body::before {
     overflow: hidden;
     margin: 0 auto 32px;
     border: none;
-    box-shadow: none;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.10);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero__avatar:hover {
     transform: scale(1.05);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22), 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .hero__avatar img {
@@ -496,6 +498,61 @@ body::before {
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(8px); }
+}
+
+/* Hero label */
+.hero__label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+/* Hero stats bar — horizontal inline */
+.hero__stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 0;
+}
+
+.hero__stats-bar-item {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.01em;
+}
+
+.hero__stats-bar-sep {
+    color: rgba(0, 0, 0, 0.12);
+    font-size: 1rem;
+    font-weight: 300;
+    user-select: none;
+}
+
+/* ===== FORMAT BLOCK (konketizatsiya) ===== */
+.format-block {
+    padding: clamp(24px, 4vw, 40px) 0;
+    background: var(--bg-main);
+}
+
+.format-block__text {
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
 /* ===== SECTIONS ===== */
