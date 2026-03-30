@@ -136,14 +136,14 @@ body::before {
 
 .btn--outline {
     background: transparent;
-    color: var(--green);
+    color: var(--text);
     border: 1.5px solid var(--green);
 }
 
 .btn--outline:hover {
-    background: var(--orange-dim);
-    border-color: var(--orange);
-    color: var(--orange);
+    background: var(--green-dim);
+    border-color: var(--green);
+    color: var(--green);
     transform: translateY(-2px) scale(1.03);
 }
 
@@ -487,7 +487,7 @@ body::before {
     font-weight: 500;
     animation: float 3s ease-in-out infinite;
     text-decoration: none;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .hero__scroll svg {
@@ -540,7 +540,7 @@ body::before {
 
 /* ===== FORMAT BLOCK (konketizatsiya) ===== */
 .format-block {
-    padding: clamp(24px, 4vw, 40px) 0;
+    padding: clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px);
     background: var(--bg-main);
 }
 
