@@ -16,3 +16,5 @@ __pycache__/
 
 # Python OG generator (dev only)
 img/generate_og.py
+
+.vercel

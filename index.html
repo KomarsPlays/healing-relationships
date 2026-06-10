@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Александр Комар — коуч и терапевт. Помогу выйти из кризиса в отношениях за 4 сессии. Бесплатная диагностика.">
+    <meta name="description" content="Александр Комар — коуч и терапевт. Помогу выйти из кризиса в отношениях за 4 сессии. Начни с разбора своей ситуации.">
     <meta name="theme-color" content="#F7F4EE">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
@@ -18,11 +18,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Александр Комар — Исцеление Отношений</title>
     <link rel="canonical" href="https://komar-coach.vercel.app/">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="img/logo/logo_bronze.svg">
+    <link rel="apple-touch-icon" href="img/logo/logo_bronze.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=20">
+    <link rel="stylesheet" href="style.css?v=26">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -43,7 +44,7 @@
         {
           "@type": "ProfessionalService",
           "name": "Исцеление Отношений",
-          "description": "Курс из 4 сессий для выхода из кризиса в отношениях. Бесплатная диагностика.",
+          "description": "Персональная программа из 4 сессий для выхода из кризиса в отношениях. Первый шаг — диагностическая сессия.",
           "provider": {
             "@type": "Person",
             "name": "Александр Комар"
@@ -78,7 +79,7 @@
               "name": "А если мне не поможет?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Я не обещаю мгновенных результатов. Именно для этого существует бесплатная диагностика — чтобы мы оба поняли, подходим ли друг другу."
+                "text": "Я не обещаю мгновенных результатов. Именно для этого есть первый разговор — диагностика, где мы оба поймём, подходим ли друг другу."
               }
             },
             {
@@ -86,7 +87,7 @@
               "name": "Сколько длится одна сессия?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Первая диагностическая сессия — 50-65 минут. Сессии курса — 1,5-2 часа."
+                "text": "Первая диагностическая сессия — 50-65 минут. Сессии программы — 1,5-2 часа."
               }
             },
             {
@@ -99,10 +100,10 @@
             },
             {
               "@type": "Question",
-              "name": "Сколько стоит курс?",
+              "name": "Сколько стоит программа?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Стоимость курса Исцеление Отношений (4 сессии) — 55 000 ₽. Доступна рассрочка от Т-Банка. Первый шаг — бесплатная диагностика."
+                "text": "Стоимость программы Исцеление Отношений (4 сессии) — 55 000 ₽. Доступна рассрочка от Т-Банка. Первый шаг — бесплатная диагностика."
               }
             }
           ]
@@ -133,7 +134,16 @@
     <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="nav" id="nav">
         <div class="nav__container">
-            <a href="#hero" class="nav__logo">Александр Комар</a>
+            <a href="#hero" class="nav__logo" aria-label="Александр Комар — на главную">
+                <span class="nav__logo-mark">
+                    <img src="img/logo/logo_bronze.svg" alt="Александр Комар" class="nav__logo-img nav__logo-img--default">
+                    <img src="img/logo/logo_sand.svg" alt="" aria-hidden="true" class="nav__logo-img nav__logo-img--scrolled">
+                </span>
+                <span class="nav__logo-text">
+                    <img src="img/logo/logo_text_bronze.svg" alt="" aria-hidden="true" class="nav__logo-img nav__logo-img--default">
+                    <img src="img/logo/logo_text_sand.svg" alt="" aria-hidden="true" class="nav__logo-img nav__logo-img--scrolled">
+                </span>
+            </a>
             <button class="nav__toggle" id="navToggle" aria-label="Меню">
                 <span></span><span></span><span></span>
             </button>
@@ -165,7 +175,7 @@
             </p>
             <div class="hero__actions reveal">
                 <a href="#" class="btn btn--primary" onclick="openMessengerModal(); return false;">
-                    Записаться на бесплатную диагностику
+                    Записаться на диагностику
                 </a>
                 <a href="#how-it-works" class="btn btn--outline">Как это работает</a>
             </div>
@@ -317,7 +327,7 @@
     <section class="section for-whom" id="for-whom">
         <div class="container">
             <span class="section__star reveal"><svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg></span>
-            <h2 class="section__title reveal">Этот курс для тебя, если...</h2>
+            <h2 class="section__title reveal">Эта программа для тебя, если...</h2>
             <div class="for-whom__grid">
                 <div class="for-whom__card reveal">
                     <div class="for-whom__icon">
@@ -362,7 +372,7 @@
                 <!-- Step 0 -->
                 <div class="zigzag__step reveal">
                     <div class="zigzag__content">
-                        <h3><span class="accent-word">Бесплатная</span> диагностика</h3>
+                        <h3>Первый шаг — <span class="accent-word">диагностика</span></h3>
                         <p>Знакомство и глубокий анализ ситуации. Находим паттерны, видим связь прошлого и настоящего. 55-75 минут.</p>
                     </div>
                     <div class="zigzag__timeline">
@@ -477,7 +487,7 @@
                     <p class="testimonials__text">"После второй сессии я впервые за долгое время почувствовала, что мои отношения можно спасти. Александр помог увидеть то, что я не замечала годами."</p>
                     <div class="testimonials__author">
                         <span class="testimonials__name">Анна</span>
-                        <span class="testimonials__detail">прошла курс ИО</span>
+                        <span class="testimonials__detail">прошла программу «Исцеление Отношений»</span>
                     </div>
                 </div>
                 <div class="testimonials__card reveal">
@@ -485,7 +495,7 @@
                     <p class="testimonials__text">"Я пришла с ощущением полного тупика. Через месяц работы с Александром — как будто сняли пелену с глаз. Ссоры прекратились, потому что изменилась я сама."</p>
                     <div class="testimonials__author">
                         <span class="testimonials__name">Елена</span>
-                        <span class="testimonials__detail">прошла курс ИО</span>
+                        <span class="testimonials__detail">прошла программу «Исцеление Отношений»</span>
                     </div>
                 </div>
                 <div class="testimonials__card reveal">
@@ -493,7 +503,7 @@
                     <p class="testimonials__text">"Самое ценное — это когда Александр показал связь между моим детством и тем, что происходит в семье сейчас. Этот инсайт изменил всё."</p>
                     <div class="testimonials__author">
                         <span class="testimonials__name">Марина</span>
-                        <span class="testimonials__detail">прошла курс ИО</span>
+                        <span class="testimonials__detail">прошла программу «Исцеление Отношений»</span>
                     </div>
                 </div>
                 <div class="testimonials__card reveal">
@@ -501,7 +511,7 @@
                     <p class="testimonials__text">"Я пришёл скептиком. Думал, что коучинг — это для тех, кто не может сам разобраться. Но Александр показал мне вещи, которые я бы сам никогда не увидел. Отношения с женой стали другими. Мы наконец-то слышим друг друга."</p>
                     <div class="testimonials__author">
                         <span class="testimonials__name">Михаил</span>
-                        <span class="testimonials__detail">прошёл курс ИО</span>
+                        <span class="testimonials__detail">прошёл программу «Исцеление Отношений»</span>
                     </div>
                 </div>
             </div>
@@ -524,7 +534,7 @@
                     <h2 class="section__title section__title--left">Александр Комар</h2>
                     <p class="about__tagline">Практикующий коуч. 500+ проведённых сессий.</p>
                     <p>Мне самому пришлось пройти через развод и боль. Это стало отправной точкой, из которой родилось желание глубоко разобраться в природе отношений.</p>
-                    <p>Я погрузился в коучинг, психологию, работу с подсознанием и глубокие медитативные техники. Проверял всё на себе — в собственной жизни, в своих отношениях, которые сейчас наполнены близостью, уважением и теплотой. Начал вести канал, ко мне стали приходить люди — и за 500+ сессий я увидел, что мои открытия работают не только для меня. <strong>Всё, что я изучил за эти годы, сложилось в единую систему — и этой системой я с радостью поделюсь с тобой на курсе "Исцеление Отношений".</strong></p>
+                    <p>Я погрузился в коучинг, психологию, работу с подсознанием и глубокие медитативные техники. Проверял всё на себе — в собственной жизни, в своих отношениях, которые сейчас наполнены близостью, уважением и теплотой. Начал вести канал, ко мне стали приходить люди — и за 500+ сессий я увидел, что мои открытия работают не только для меня. <strong>Всё, что я изучил за эти годы, сложилось в единую систему — и этой системой я с радостью поделюсь с тобой в программе "Исцеление Отношений".</strong></p>
                     <div class="about__links">
                         <a href="https://t.me/WakeUp_Komars" target="_blank" rel="noopener" class="about__link">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.46-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141a.506.506 0 01.171.325c.016.093.036.306.02.472z"/></svg>
@@ -552,7 +562,7 @@
     <section class="section diagnostic" id="diagnostic">
         <div class="container">
             <div class="diagnostic__card reveal">
-                <h2 class="section__title">Бесплатная диагностика</h2>
+                <h2 class="section__title">Диагностическая сессия</h2>
                 <p class="diagnostic__desc">Первый шаг — разговор. Без обязательств, без давления. Просто расскажи, что происходит.</p>
                 <div class="diagnostic__features">
                     <div class="diagnostic__feature">
@@ -610,7 +620,7 @@
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="faq__answer">
-                        <p>Я не обещаю мгновенных результатов — многое в работе зависит от самого клиента. Но я ценю честность: именно для этого существует бесплатная диагностика — чтобы мы оба поняли, подходим ли друг другу.</p>
+                        <p>Я не обещаю мгновенных результатов — многое в работе зависит от самого клиента. Но я ценю честность: именно для этого есть первый разговор — диагностика, где мы оба поймём, подходим ли друг другу.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
@@ -619,7 +629,7 @@
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="faq__answer">
-                        <p>Первая диагностическая сессия — 50-65 минут. Сессии курса — 1,5-2 часа. Мы не торопимся: правильные решения рождаются из ясности, а не из спешки.</p>
+                        <p>Первая диагностическая сессия — 50-65 минут. Сессии программы — 1,5-2 часа. Мы не торопимся: правильные решения рождаются из ясности, а не из спешки.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
@@ -633,11 +643,11 @@
                 </div>
                 <div class="faq__item reveal">
                     <button class="faq__question" aria-expanded="false">
-                        <span>Сколько стоит курс?</span>
+                        <span>Сколько стоит программа?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
                     <div class="faq__answer">
-                        <p>Стоимость курса "Исцеление Отношений" (4 сессии) — 55&nbsp;000&nbsp;₽. Доступна рассрочка от Т-Банка. Первый шаг — бесплатная диагностика, на которой мы обсудим все детали и поймём, подходим ли друг другу.</p>
+                        <p>Стоимость программы "Исцеление Отношений" (4 сессии) — 55&nbsp;000&nbsp;₽. Доступна рассрочка от Т-Банка. Первый шаг — бесплатная диагностика, на которой мы обсудим все детали и поймём, подходим ли друг другу.</p>
                     </div>
                 </div>
             </div>
@@ -660,6 +670,7 @@
                 <a href="https://www.youtube.com/@komars-soul" target="_blank" rel="noopener">YouTube</a>
                 <a href="https://vkvideo.ru/video/playlist/6032482_33974636" target="_blank" rel="noopener">ВКонтакте</a>
             </div>
+            <img src="img/logo/logo_vert_sand.svg" alt="" aria-hidden="true" class="footer__logo">
             <p class="footer__copy">© 2026 Александр Комар. Все права защищены.</p>
         </div>
     </footer>

@@ -183,10 +183,6 @@ body::before {
 }
 
 /* Scrolled state: white text on green background */
-.nav.scrolled .nav__logo {
-    color: var(--white);
-}
-
 .nav.scrolled .nav__link {
     color: rgba(255,255,255,0.8);
 }
@@ -229,15 +225,52 @@ body::before {
 }
 
 .nav__logo {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
     text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.5s;
-    line-height: 1.15;
-    white-space: nowrap;
+    line-height: 0;
+}
+
+.nav__logo-mark,
+.nav__logo-text {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+}
+
+.nav__logo-mark {
+    height: 44px;
+    width: 44px;
+}
+
+.nav__logo-text {
+    height: 18px;
+    width: auto;
+    aspect-ratio: 293.12 / 25.11;
+}
+
+.nav__logo-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Default (over hero): bronze visible, sand hidden */
+.nav__logo-img--scrolled {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Scrolled state: bronze hidden, sand visible */
+.nav.scrolled .nav__logo-img--default {
+    opacity: 0;
+}
+.nav.scrolled .nav__logo-img--scrolled {
+    opacity: 1;
 }
 
 .nav__menu {
@@ -1746,6 +1779,14 @@ body::before {
     color: var(--orange);
 }
 
+.footer__logo {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0.85;
+}
+
 .footer__copy {
     color: rgba(255,255,255,0.4);
     font-size: 0.8rem;
@@ -1787,6 +1828,15 @@ body::before {
         background: var(--green);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+    }
+
+    /* Mobile: hide text part, leave only the mark */
+    .nav__logo-text {
+        display: none;
+    }
+    .nav__logo-mark {
+        height: 40px;
+        width: 40px;
     }
 
     /* Center-align mobile menu and make CTA bigger */
