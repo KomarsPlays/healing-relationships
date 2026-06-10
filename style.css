@@ -1419,14 +1419,13 @@ body::before {
     aspect-ratio: 3 / 4;
     object-fit: cover;
     object-position: 60% 25%;
-    transform: scaleX(-1);
     border-radius: var(--radius);
     border: 2px solid var(--border);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s;
 }
 
 .about__photo-img:hover {
-    transform: scaleX(-1) scale(1.02);
+    transform: scale(1.02);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
 }
 
@@ -2042,11 +2041,9 @@ body::before {
         border: none;
         box-shadow: none;
         object-position: 55% 20%;
-        transform: scaleX(-1);
     }
 
     .about__photo-img:hover {
-        transform: scaleX(-1);
         box-shadow: none;
     }
 
