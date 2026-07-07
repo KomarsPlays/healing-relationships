@@ -3,6 +3,19 @@
  * Scroll animations, FAQ accordion, mobile nav, smooth scroll
  */
 
+// ===== SHARED BODY SCROLL LOCK =====
+// Мобильное меню и модалка пишут в body.style.overflow — счётчик не даёт
+// одному оверлею разблокировать скролл, пока открыт другой.
+let bodyScrollLocks = 0;
+function lockBodyScroll() {
+    bodyScrollLocks++;
+    document.body.style.overflow = 'hidden';
+}
+function unlockBodyScroll() {
+    bodyScrollLocks = Math.max(0, bodyScrollLocks - 1);
+    if (bodyScrollLocks === 0) document.body.style.overflow = '';
+}
+
 (function() {
     'use strict';
 
@@ -46,17 +59,21 @@
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('open');
-            navMenu.classList.toggle('open');
-            document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+            const willOpen = !navMenu.classList.contains('open');
+            navToggle.classList.toggle('open', willOpen);
+            navMenu.classList.toggle('open', willOpen);
+            navToggle.setAttribute('aria-expanded', String(willOpen));
+            if (willOpen) lockBodyScroll(); else unlockBodyScroll();
         });
 
         // Close on link click
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
+                if (!navMenu.classList.contains('open')) return;
                 navToggle.classList.remove('open');
                 navMenu.classList.remove('open');
-                document.body.style.overflow = '';
+                navToggle.setAttribute('aria-expanded', 'false');
+                unlockBodyScroll();
             });
         });
     }
@@ -123,16 +140,50 @@
         }, { passive: false });
         impactBtn.addEventListener('touchend', stopTremor);
         impactBtn.addEventListener('touchcancel', stopTremor);
+
+        // Keyboard (role="button" обещает Enter/Space — выполняем обещание)
+        impactBtn.addEventListener('keydown', (e) => {
+            if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) {
+                e.preventDefault();
+                startTremor();
+            }
+        });
+        impactBtn.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') stopTremor();
+        });
     }
+
+    // ===== IMPACT CARDS — KEYBOARD ACCESS + ARIA SYNC =====
+    // Карточки раскрываются inline-onclick на div; даём им клавиатуру
+    // и синхронизируем aria-expanded после переключения.
+    document.querySelectorAll('.impact__item').forEach(item => {
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+        item.addEventListener('click', () => {
+            const detail = item.querySelector('.impact__detail');
+            if (detail) {
+                item.setAttribute('aria-expanded', detail.classList.contains('open') ? 'true' : 'false');
+            }
+        });
+    });
 
 })();
 
 // ===== MESSENGER MODAL (global scope for inline onclick) =====
+let messengerModalReturnFocus = null;
+
 function openMessengerModal() {
     const modal = document.getElementById('messengerModal');
-    if (modal) {
+    if (modal && !modal.classList.contains('active')) {
+        messengerModalReturnFocus = document.activeElement;
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        lockBodyScroll();
+        const closeBtn = modal.querySelector('.messenger-modal__close');
+        if (closeBtn) closeBtn.focus();
         // Yandex Metrika goal: modal opened
         if (typeof ym !== 'undefined') ym(108266859, 'reachGoal', 'click_messenger_modal');
     }
@@ -140,13 +191,34 @@ function openMessengerModal() {
 
 function closeMessengerModal() {
     const modal = document.getElementById('messengerModal');
-    if (modal) {
+    if (modal && modal.classList.contains('active')) {
         modal.classList.remove('active');
-        document.body.style.overflow = '';
+        unlockBodyScroll();
+        if (messengerModalReturnFocus && typeof messengerModalReturnFocus.focus === 'function') {
+            messengerModalReturnFocus.focus();
+        }
+        messengerModalReturnFocus = null;
     }
 }
 
-// Close on Escape key
+// Close on Escape + focus trap внутри открытой модалки
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMessengerModal();
+    if (e.key === 'Escape') {
+        closeMessengerModal();
+        return;
+    }
+    if (e.key !== 'Tab') return;
+    const modal = document.getElementById('messengerModal');
+    if (!modal || !modal.classList.contains('active')) return;
+    const focusables = modal.querySelectorAll('button, a[href]');
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+    }
 });
