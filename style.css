@@ -45,10 +45,9 @@ body::before {
     --green-light: #2D6A4F;
     --green-dim: rgba(27, 67, 50, 0.08);
     --green-glow: rgba(27, 67, 50, 0.15);
+    /* Бронза #B07D4F — канон бренда (решение Александра 07.07.2026):
+       не затемнять ради WCAG-контраста, светлая бронза = фирменный вид. */
     --orange: #B07D4F;
-    /* Тёмная бронза для текста и кнопок: белый на ней 6.1:1, она на песке 5.1:1 (WCAG AA).
-       Светлый --orange остаётся для декора (линии, свечения, крупные акценты). */
-    --orange-deep: #855A33;
     --orange-dim: rgba(176, 125, 79, 0.10);
     --orange-glow: rgba(176, 125, 79, 0.22);
     --gold: #9A7B4F;
@@ -115,13 +114,13 @@ body::before {
 }
 
 .btn--primary {
-    background: var(--orange-deep);
+    background: var(--orange);
     color: var(--white);
     box-shadow: 0 4px 24px var(--orange-glow);
 }
 
 .btn--primary:hover {
-    background: #6E4A2A;
+    background: #956840;
     box-shadow: 0 8px 32px var(--orange-glow);
     transform: translateY(-2px) scale(1.03);
 }
@@ -272,12 +271,13 @@ body::before {
 }
 
 .nav__link {
-    color: var(--orange-deep);
+    color: var(--orange);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
     transition: color 0.5s;
     position: relative;
+    opacity: 0.85;
     white-space: nowrap;
 }
 
@@ -293,7 +293,7 @@ body::before {
 }
 
 .nav__link:hover {
-    color: var(--orange-deep);
+    color: var(--orange);
     opacity: 1;
 }
 
@@ -304,7 +304,7 @@ body::before {
 .nav__cta {
     display: inline-flex;
     padding: 10px 24px;
-    background: var(--orange-deep);
+    background: var(--orange);
     color: var(--white);
     text-decoration: none;
     font-size: 0.9rem;
@@ -315,7 +315,7 @@ body::before {
 }
 
 .nav__cta:hover {
-    background: #6E4A2A;
+    background: #956840;
     transform: translateY(-1px) scale(1.03);
     box-shadow: 0 4px 20px var(--orange-glow);
 }
