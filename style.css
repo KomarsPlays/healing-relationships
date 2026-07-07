@@ -415,6 +415,20 @@ body::before {
     color: var(--orange);
 }
 
+/* Слово-ссылка на условия разбора: наследует цвет, видимое подчёркивание */
+.link-uslovia {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(176, 125, 79, 0.5);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+    transition: text-decoration-color 0.2s ease;
+}
+
+.link-uslovia:hover {
+    text-decoration-color: var(--orange);
+}
+
 .hero__subtitle {
     font-size: clamp(1.05rem, 2vw, 1.3rem);
     color: var(--text-secondary);
