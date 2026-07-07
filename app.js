@@ -222,3 +222,23 @@ document.addEventListener('keydown', (e) => {
         first.focus();
     }
 });
+
+// ===== COOKIE NOTICE =====
+// Показывается, пока посетитель не нажал "Хорошо"; выбор хранится в localStorage.
+(function() {
+    const notice = document.getElementById('cookieNotice');
+    const btn = document.getElementById('cookieNoticeBtn');
+    if (!notice || !btn) return;
+    let accepted = false;
+    try {
+        accepted = localStorage.getItem('cookieConsent') === '1';
+    } catch (e) { /* приватный режим — просто покажем плашку */ }
+    if (accepted) return;
+    notice.hidden = false;
+    btn.addEventListener('click', () => {
+        try {
+            localStorage.setItem('cookieConsent', '1');
+        } catch (e) { /* нет localStorage — скроем до перезагрузки */ }
+        notice.hidden = true;
+    });
+})();

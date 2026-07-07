@@ -418,7 +418,7 @@ body::before {
 .hero__subtitle {
     font-size: clamp(1.05rem, 2vw, 1.3rem);
     color: var(--text-secondary);
-    max-width: 560px;
+    max-width: 680px; /* первая строка до <br> должна помещаться целиком */
     margin: 0 auto 40px;
     line-height: 1.6;
 }
@@ -2049,5 +2049,75 @@ body::before {
 @media (max-width: 600px) {
     .testimonials__grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* На узких экранах строка подзаголовка hero переносится сама — принудительный br убираем */
+@media (max-width: 640px) {
+    .hero__subtitle br {
+        display: none;
+    }
+}
+
+/* ===== ЦЕНА РАЗБОРА (блок diagnostic) ===== */
+.diagnostic__price {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--green);
+    margin: -8px 0 28px;
+}
+
+/* ===== КУКИ-УВЕДОМЛЕНИЕ ===== */
+.cookie-notice {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 900; /* выше контента, ниже модалки (10000) */
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: max-content;
+    max-width: min(680px, calc(100vw - 32px));
+    padding: 14px 20px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 30px rgba(27, 67, 50, 0.18);
+}
+
+.cookie-notice[hidden] {
+    display: none;
+}
+
+.cookie-notice p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+.cookie-notice a {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.cookie-notice__btn {
+    padding: 10px 24px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+    .cookie-notice {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        text-align: center;
+    }
+    .cookie-notice p {
+        text-align: center;
     }
 }
