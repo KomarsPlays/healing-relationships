@@ -234,7 +234,8 @@ document.addEventListener('keydown', (e) => {
         accepted = localStorage.getItem('cookieConsent') === '1';
     } catch (e) { /* приватный режим — просто покажем плашку */ }
     if (accepted) return;
-    notice.hidden = false;
+    // Задержка показа: первый экран остаётся чистым, кнопка записи видна
+    setTimeout(() => { notice.hidden = false; }, 1200);
     btn.addEventListener('click', () => {
         try {
             localStorage.setItem('cookieConsent', '1');

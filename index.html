@@ -23,8 +23,8 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Commissioner:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=31">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Commissioner:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=32">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -64,7 +64,7 @@
               "name": "Подойдёт ли мне, если партнёр не хочет участвовать?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Да. Работа идёт с вами — с вашими реакциями, убеждениями, моделями поведения. Когда меняетесь вы — неизбежно меняется динамика отношений. Партнёру не нужно участвовать."
+                "text": "Да. Работа идёт с вами — с вашими реакциями, убеждениями, моделями поведения. Когда меняетесь вы — как правило, меняется и динамика отношений. Партнёру не нужно участвовать."
               }
             },
             {
@@ -113,6 +113,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Разбор длится 55-75 минут и проходит онлайн по видеосвязи. Оплата — по счёту заранее (4 400 ₽), чек придёт на почту. Перенести встречу можно, предупредив за 24 часа. Если передумаете до проведения разбора — верну 100% оплаты. Подробнее — на странице \"Условия проведения разбора\"."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Коучинг заменяет психотерапию?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Нет. Коучинг — это работа с вашими реакциями, убеждениями и выборами в отношениях. Он дополняет, но не заменяет помощь врача или психотерапевта. Если вам сейчас по-настоящему тяжело — начните с поддержки специалиста, а когда появится опора, возвращайтесь: работа с отношениями пойдёт легче. При угрозе жизни звоните 112."
               }
             }
           ]
@@ -529,6 +537,7 @@
                     Все отзывы в Телеграм →
                 </a>
             </div>
+            <p class="testimonials__disclaimer reveal">Отзывы опубликованы с согласия клиентов, имена изменены. Путь и скорость изменений у каждого свои.</p>
         </div>
     </section>
 
@@ -607,66 +616,75 @@
             <h2 class="section__title reveal">Частые вопросы</h2>
             <div class="faq__list">
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-1">
                         <span>Подойдёт ли мне, если партнёр не хочет участвовать?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
-                        <p>Да. Работа идёт с вами — с вашими реакциями, убеждениями, моделями поведения. Когда меняетесь вы — неизбежно меняется динамика отношений. Партнёру не нужно участвовать.</p>
+                    <div class="faq__answer" id="faq-answer-1">
+                        <p>Да. Работа идёт с вами — с вашими реакциями, убеждениями, моделями поведения. Когда меняетесь вы — как правило, меняется и динамика отношений. Партнёру не нужно участвовать.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-2">
                         <span>Работает ли онлайн так же хорошо, как очно?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-2">
                         <p>Да, все мои сессии происходят онлайн, а результаты не отличаются от очных сессий. Единственное условие — спокойное место, где вас никто не потревожит.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-3">
                         <span>А если мне не поможет?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-3">
                         <p>Я не обещаю мгновенных результатов — многое в работе зависит от самого клиента. Но я ценю честность: именно для этого есть первая встреча — разбор, где мы оба поймём, подходим ли друг другу.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-4">
                         <span>Сколько длится одна сессия?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-4">
                         <p>Разбор — 55-75 минут. Сессии программы — 60-90 минут. Мы не торопимся: правильные решения рождаются из ясности, а не из спешки.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-5">
                         <span>Это подходит только для женщин?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-5">
                         <p>Ко мне обращаются и мужчины, и женщины. Чаще — женщины, но кризис в отношениях не зависит от пола. Если чувствуете, что пора что-то менять — напишите.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-6">
                         <span>Сколько стоит программа?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-6">
                         <p>Стоимость программы "Исцеление Отношений" (4 сессии) — 55&nbsp;000&nbsp;₽. Доступна рассрочка от Т-Банка. Первый шаг — разбор вашей ситуации (4&nbsp;400&nbsp;₽), на котором мы обсудим все детали и поймём, подходим ли друг другу.</p>
                     </div>
                 </div>
                 <div class="faq__item reveal">
-                    <button class="faq__question" aria-expanded="false">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-7">
                         <span>Какие условия у разбора?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
                     </button>
-                    <div class="faq__answer">
+                    <div class="faq__answer" id="faq-answer-7">
                         <p>Разбор длится 55-75 минут и проходит онлайн по видеосвязи. Оплата — по счёту заранее (4&nbsp;400&nbsp;₽), чек придёт на почту. Перенести встречу можно, предупредив за 24 часа. Если передумаете до проведения разбора — верну 100% оплаты. Подробнее — на странице <a href="uslovia-razbora.html" target="_blank" rel="noopener">"Условия проведения разбора"</a>.</p>
+                    </div>
+                </div>
+                <div class="faq__item reveal">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-8">
+                        <span>Коучинг заменяет психотерапию?</span>
+                        <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer" id="faq-answer-8">
+                        <p>Нет. Коучинг — это работа с вашими реакциями, убеждениями и выборами в отношениях. Он дополняет, но не заменяет помощь врача или психотерапевта. Если вам сейчас по-настоящему тяжело — начните с поддержки специалиста, а когда появится опора, возвращайтесь: работа с отношениями пойдёт легче. При угрозе жизни звоните 112.</p>
                     </div>
                 </div>
             </div>
@@ -693,6 +711,7 @@
             <p class="footer__copy">© 2026 Александр Комар. Все права защищены.</p>
             <p class="footer__copy">ИП Комар Александр · ИНН 230123514995 · ОГРНИП 326237500110982<br>
             <a href="oferta.html" style="color: inherit;">Публичная оферта</a> · <a href="politika-pd.html" style="color: inherit;">Политика обработки персональных данных</a></p>
+            <p class="footer__copy footer__disclaimer">Коучинг дополняет, но не заменяет медицинскую и психотерапевтическую помощь. При острой опасности для жизни обращайтесь в экстренные службы (112) или на кризисную линию психологической помощи.</p>
         </div>
     </footer>
 
@@ -724,6 +743,6 @@
         <button class="btn btn--primary cookie-notice__btn" id="cookieNoticeBtn" type="button">Хорошо</button>
     </div>
 
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>

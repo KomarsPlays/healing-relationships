@@ -495,9 +495,10 @@ body::before {
 /* Hero stats bar — horizontal inline */
 .hero__stats-bar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 8px 16px;
     padding-top: 32px;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     margin-top: 0;
@@ -509,6 +510,7 @@ body::before {
     font-weight: 400;
     color: var(--text-muted);
     letter-spacing: 0.01em;
+    white-space: nowrap;
 }
 
 .hero__stats-bar-sep {
@@ -1303,6 +1305,13 @@ body::before {
 .testimonials__more {
     text-align: center;
     margin-top: 32px;
+}
+
+.testimonials__disclaimer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }
 
 /* ===== ABOUT ===== */
@@ -2124,14 +2133,27 @@ body::before {
     flex-shrink: 0;
 }
 
+.footer__disclaimer {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.78rem;
+}
+
+/* На мобильном плашка остаётся однострочной и компактной — не перекрывает кнопку записи */
 @media (max-width: 560px) {
     .cookie-notice {
-        flex-direction: column;
-        align-items: stretch;
+        bottom: 10px;
         gap: 10px;
-        text-align: center;
+        padding: 10px 12px;
+        max-width: calc(100vw - 20px);
     }
     .cookie-notice p {
-        text-align: center;
+        font-size: 0.74rem;
+        line-height: 1.35;
+    }
+    .cookie-notice__btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
     }
 }
