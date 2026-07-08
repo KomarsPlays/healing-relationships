@@ -320,6 +320,15 @@ body::before {
     box-shadow: 0 4px 20px var(--orange-glow);
 }
 
+/* Мобильная кнопка записи в шапке — видна только когда меню спрятано в гамбургер */
+.nav__cta--mobile {
+    display: none;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    margin-left: auto;
+    margin-right: 12px;
+}
+
 .nav__toggle {
     display: none;
     flex-direction: column;
@@ -1147,6 +1156,21 @@ body::before {
     opacity: 0.85;
 }
 
+.zigzag__quote-label {
+    display: block;
+    margin-top: 14px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+    opacity: 0.7;
+}
+
+.zigzag__quote-label + .zigzag__quote {
+    margin-top: 2px;
+}
+
 .zigzag__empty {
     min-height: 1px;
 }
@@ -1181,6 +1205,11 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.results__cta {
+    text-align: center;
+    margin-top: 48px;
 }
 
 .results__item {
@@ -1753,6 +1782,10 @@ body::before {
         font-size: 1.1rem;
         padding: 14px 32px;
         margin-top: 8px;
+    }
+
+    .nav__cta--mobile {
+        display: inline-flex;
     }
 
     .nav__toggle {
