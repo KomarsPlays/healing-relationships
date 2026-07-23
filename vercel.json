@@ -1,4 +1,7 @@
 {
+  "rewrites": [
+    { "source": "/mne-hvataet", "destination": "/mne-hvataet.html" }
+  ],
   "headers": [
     {
       "source": "/img/(.*)",
