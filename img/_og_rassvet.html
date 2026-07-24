@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>OG рассвет — мне хватает</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Commissioner:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* OG 1200x630 для лендинга /mne-hvataet — мотив "Рассвет + золотая мера" (24.07.2026).
+   Рендер: headless Chrome окно 1200x630, затем PIL -> og-mne-hvataet.jpg */
+* { margin:0; padding:0; box-sizing:border-box; }
+#stage {
+    position:relative; width:1200px; height:630px; overflow:hidden;
+    font-family:'Commissioner', sans-serif;
+    background:
+        radial-gradient(ellipse 85% 70% at 74% 4%, rgba(233,196,138,.60) 0%, rgba(233,196,138,0) 62%),
+        linear-gradient(163deg, #EFEBE3 0%, #EFE3CF 52%, #E9CFA6 100%);
+}
+#stage::after {
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.logo { position:absolute; top:42px; left:64px; height:58px; }
+.mera { position:absolute; top:50%; right:44px; transform:translateY(-50%); width:520px; height:520px; }
+.content { position:absolute; left:64px; top:50%; transform:translateY(-50%); z-index:2; }
+.label {
+    font-size:20px; font-weight:500; letter-spacing:.32em; text-transform:uppercase;
+    color:#B0703C; margin-bottom:14px;
+}
+h1 {
+    font-family:'Cormorant Garamond', serif; font-weight:500;
+    font-size:116px; line-height:.82; color:#1B4332; max-width:12ch;
+}
+.ne { position:relative; display:inline-block; color:rgba(27,67,50,.30); font-style:italic; font-weight:400; }
+.ne::after {
+    content:''; position:absolute; left:-8%; right:-8%; top:52%; height:8px; border-radius:8px;
+    background:#E02B12; transform:rotate(-9deg);
+}
+.facts { position:absolute; left:64px; top:466px; z-index:2; font-size:23px; font-weight:300; color:#7A7268; }
+.facts b { font-weight:500; color:#1B4332; }
+</style>
+</head>
+<body>
+<div id="stage">
+    <img class="logo" src="logo/logo_line_bronze.svg" alt="">
+    <div class="mera">
+        <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="300" r="286" stroke="#1B4332" stroke-opacity=".10" stroke-width="1"/>
+            <circle cx="300" cy="300" r="238" stroke="#1B4332" stroke-opacity=".14" stroke-width="1" stroke-dasharray="2 9"/>
+            <circle cx="300" cy="300" r="190" stroke="#9A7B4F" stroke-width="2.5"
+                    stroke-linecap="round" stroke-dasharray="1075 1194"
+                    transform="rotate(-64 300 300)"/>
+            <circle cx="300" cy="110" r="7" fill="#9A7B4F"/>
+            <circle cx="300" cy="300" r="64" fill="#FFFFFF" fill-opacity=".16"/>
+            <circle cx="300" cy="300" r="5" fill="#1B4332" fill-opacity=".45"/>
+        </svg>
+    </div>
+    <div class="content">
+        <div class="label">Групповой интенсив · старт 3 августа</div>
+        <h1>мне <span class="ne">не</span> хватает</h1>
+    </div>
+    <div class="facts"><b>14 дней</b> практики · онлайн в Telegram · до <b>18</b> человек</div>
+</div>
+</body>
+</html>

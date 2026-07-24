@@ -10,7 +10,7 @@
     <meta property="og:title" content="Интенсив &quot;Мне хватает&quot; — 14 дней практики">
     <meta property="og:description" content="Две недели практики, которые помогают переучить ум с &quot;мне не хватает&quot; на спокойное &quot;мне хватает&quot;. Старт 3 августа, онлайн.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://komar-coach.vercel.app/img/og-mne-hvataet.jpg">
+    <meta property="og:image" content="https://komar-coach.vercel.app/img/og-mne-hvataet.jpg?v=2">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://komar-coach.vercel.app/mne-hvataet">
@@ -211,7 +211,7 @@
             font-family: var(--font-heading);
             font-weight: 500;
             font-size: clamp(3.4rem, 8.6vw, 7.4rem);
-            line-height: 0.9;
+            line-height: 0.82;
             color: var(--green);
             margin-bottom: 32px;
             max-width: 12ch;
@@ -219,8 +219,7 @@
         .mh-ne {
             position: relative;
             display: inline-block;
-            color: var(--green);
-            opacity: 0.30;
+            color: rgba(27, 67, 50, 0.30); /* прозрачно только слово "не" — черта ::after остаётся полноцветной */
             font-style: italic;
             font-weight: 400;
         }
@@ -233,7 +232,7 @@
             height: clamp(4px, 0.06em, 8px);
             border-radius: 8px;
             background: #E02B12;   /* яркий алый — черта осознанно выбивается из палитры (решение Александра, круг 3) */
-            transform: rotate(-6deg);
+            transform: rotate(-9deg); /* круг 24.07: угол круче — левый край ниже, черта заметнее */
         }
         .mh-hero__sub {
             font-weight: 300;
@@ -1092,7 +1091,7 @@
             <img src="img/logo/logo_vert_bronze.svg" alt="" aria-hidden="true" class="footer__logo">
             <p class="footer__copy">© 2026 Александр Комар. Все права защищены.</p>
             <p class="footer__copy">ИП Комар Александр · ИНН 230123514995 · ОГРНИП 326237500110982<br>
-            <a href="oferta.html" style="color: inherit;">Публичная оферта</a> · <a href="politika-pd.html" style="color: inherit;">Политика обработки персональных данных</a></p>
+            <a href="oferta-intensiv.html" style="color: inherit;">Публичная оферта интенсива</a> · <a href="politika-pd.html" style="color: inherit;">Политика обработки персональных данных</a></p>
             <p class="footer__copy footer__disclaimer">Интенсив носит образовательный характер и не является психологической, медицинской или психотерапевтической услугой. Коучинг дополняет, но не заменяет медицинскую и психотерапевтическую помощь. При острой опасности для жизни обращайтесь в экстренные службы (112) или на кризисную линию психологической помощи.</p>
         </div>
     </footer>
