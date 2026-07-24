@@ -2190,3 +2190,35 @@ body::before {
         font-size: 0.8rem;
     }
 }
+
+/* Кнопка "наверх" — справа снизу, появляется после первого экрана прокрутки */
+.totop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 901; /* выше куки-плашки (900) */
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #B07D4F;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.35s, transform 0.35s, background 0.3s;
+}
+.totop.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.totop:hover { background: #956840; }
+@media (max-width: 640px) {
+    .totop { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}

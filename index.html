@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Commissioner:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=34">
+    <link rel="stylesheet" href="style.css?v=35">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -800,12 +800,30 @@
         </div>
     </div>
 
+    <!-- ===== КНОПКА "НАВЕРХ" ===== -->
+    <button class="totop" id="toTop" type="button" aria-label="Наверх">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+
     <!-- ===== КУКИ-УВЕДОМЛЕНИЕ ===== -->
     <div class="cookie-notice" id="cookieNotice" hidden>
         <p>Сайт использует файлы cookie для статистики посещений. Подробнее — в <a href="politika-pd.html">Политике обработки персональных данных</a>.</p>
         <button class="btn btn--primary cookie-notice__btn" id="cookieNoticeBtn" type="button">Хорошо</button>
     </div>
 
+    <script>
+        // Кнопка "наверх": появляется после первого экрана прокрутки
+        (function() {
+            var toTop = document.getElementById('toTop');
+            if (!toTop) return;
+            window.addEventListener('scroll', function() {
+                toTop.classList.toggle('visible', window.scrollY > window.innerHeight * 1.2);
+            }, { passive: true });
+            toTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
     <script src="app.js?v=4"></script>
 </body>
 </html>
