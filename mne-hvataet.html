@@ -107,6 +107,14 @@
             },
             {
               "@type": "Question",
+              "name": "Я отношусь к таким вещам скептически. Мне сюда можно?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Можно. Верить ни во что не требуется: инструменты письменные, шаги конкретные, а эффект вы оцениваете сами — по замеру в начале и в конце. Скепсис практике не мешает. Мешает только одно: не делать. Среди тех, с кем я работаю, осторожных скептиков хватает — и метод от этого хуже не становится."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Как проходит оплата?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -433,6 +441,10 @@
             font-size: 1.15rem;
         }
         .mh-places__root strong { color: var(--green); }
+        /* Разбивка вывода на две строки — только десктоп (решение Александра, круг 2) */
+        @media (max-width: 860px) {
+            .mh-places__br { display: none; }
+        }
 
         /* Текстовая секция-рассуждение */
         .mh-prose {
@@ -576,6 +588,67 @@
             text-align: center;
             margin-top: 36px;
         }
+        .mh-price__self {
+            max-width: 640px;
+            margin: 26px auto 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+
+        /* Отзывы из личной работы (круг 2, 24.07) */
+        .mh-reviews__intro {
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        .mh-reviews__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+        .mh-review {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 28px 26px;
+            text-align: left;
+        }
+        .mh-review__label {
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--orange);
+        }
+        .mh-review__context {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .mh-review__quote {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .mh-reviews__more {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .mh-reviews__foot {
+            margin-top: 22px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
 
         /* Честный разговор */
         .mh-honest__grid {
@@ -605,6 +678,17 @@
         }
         .mh-honest__card--no h3 { color: var(--green); }
         .mh-honest__card--yes h3 { color: #F1EFE9; }
+        .mh-honest__card--yes ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .mh-honest__card--yes li {
+            font-size: 0.97rem;
+            line-height: 1.6;
+        }
 
         /* Для кого */
         .mh-fit__grid {
@@ -627,7 +711,7 @@
             color: var(--green);
             margin-bottom: 10px;
         }
-        .mh-fit__test {
+        .mh-fit__door {
             max-width: 720px;
             margin: 44px auto 0;
             background: var(--bg-surface);
@@ -717,7 +801,7 @@
             </svg>
         </div>
         <div class="mh-hero__inner">
-            <span class="hero__label reveal">Групповой интенсив · старт 3 августа</span>
+            <span class="hero__label reveal">Групповой интенсив · старт 3 августа · набор до 2 августа</span>
             <h1 class="mh-hero__title reveal">мне <span class="mh-ne">не</span> хватает</h1>
             <p class="mh-hero__sub reveal">Частица <b>"не"</b> — это привычка ума, а не факт вашей жизни. Две недели практики в небольшой группе, чтобы эта частица растворилась — и осталось спокойное <b>"мне хватает"</b>.</p>
             <div class="mh-hero__actions reveal">
@@ -763,7 +847,7 @@
                     <p>Когда внутри звучит <em>"даже мечтать себе не разрешаю"</em>.</p>
                 </div>
             </div>
-            <p class="mh-places__root reveal">Направления разные, а корень один. Он не в кошельке и не в календаре. <strong>Нехватка — это привычка ума.</strong> И с ней можно работать.</p>
+            <p class="mh-places__root reveal">Направления разные, а корень один. Он не в кошельке и не в календаре.<br class="mh-places__br"> <strong>Нехватка — это привычка ума.</strong> И с ней можно работать.</p>
         </div>
     </section>
 
@@ -792,7 +876,7 @@
             <div class="mh-video__frame reveal">
                 <iframe src="https://www.youtube-nocookie.com/embed/-MVayBMEhNU" title="Видео Александра Комара о нехватке" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <p class="mh-video__caption reveal">Если мы с вами ещё не знакомы, посмотрите это видео. В нём я разбираю, откуда берётся ощущение нехватки и почему оно не уходит от усилий и понимания. Заодно познакомитесь со мной и с тем, как я работаю.</p>
+            <p class="mh-video__caption reveal">Прежде чем решать — познакомьтесь со мной вживую. В этом видео я разбираю, откуда берётся ощущение нехватки и почему она не уходит от усилий и понимания. Заодно поймёте, как я работаю и говорю — вам со мной две недели идти рядом, лучше проверить заранее.</p>
         </div>
     </section>
 
@@ -830,7 +914,7 @@
                     <div class="mh-stage__body">
                         <span class="mh-stage__days">Дни 3-6</span>
                         <h3>Прощение</h3>
-                        <p>Расчистка. Разбираемся, почему старые обиды и счёты держат нехватку на месте, и проходим четыре сессии прощения по анкетам, которые я использую в работе. Это сердце интенсива и та работа, которую в подобных программах встречаю редко.</p>
+                        <p>Расчистка. Разбираемся, почему старые обиды и счёты держат нехватку на месте, и проходим четыре сессии прощения по протоколу, который я использую в работе. Это сердце интенсива и та работа, которую в подобных программах встречаю редко. Идём бережно и не в одиночку: протокол ведёт шаг за шагом, а я рядом в чате каждый день.</p>
                     </div>
                 </div>
 
@@ -927,8 +1011,83 @@
                     <p class="about__tagline">Александр Комар. Практикующий коуч. 500+ проведённых сессий.</p>
                     <p>За плечами профессиональная переподготовка по психологическому консультированию и две ступени Школы духовной психологии. Работаю в коучинговом, а не в клиническом формате. В основе моей работы — метод трёх "П": <strong class="mh-3p">Принятие, Прощение, Покой</strong>.</p>
                     <p>Тему нехватки я не вычитал в книгах, а прожил сам: как звучит это <em>"мне не хватает"</em>, знаю изнутри. Именно поэтому интенсив построен не на теории, а на практике, которая в своё время развернула меня.</p>
+                    <p><strong>Почему я вкладываюсь в этот поток.</strong> Групповой формат я веду впервые, и для меня это личная ставка: хочу, чтобы метод, который работает один на один, заработал для целой группы. Поэтому в первом потоке меня будет много: я в чате каждый день, отвечаю голосовыми, оба созвона веду сам. Мне по-настоящему важно, чтобы каждый, кто войдёт в эту группу, дошёл до конца — и вышел с другим внутренним состоянием: <em>"мне хватает. Мне действительно хватает"</em>.</p>
                     <p>Подробнее обо мне и моей работе — на <a href="index.html" class="link-uslovia">основном сайте</a>.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ИЗ ЛИЧНОЙ РАБОТЫ (ОТЗЫВЫ) ===== -->
+    <section class="section mh-alt" id="reviews">
+        <div class="container">
+            <span class="section__star reveal"><svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg></span>
+            <h2 class="section__title reveal">Из личной работы</h2>
+            <p class="mh-reviews__intro reveal">Групповой формат я провожу впервые — поэтому здесь слова людей, с которыми мы работали один на один. Метод тот же, что ляжет в основу интенсива: прощение, проявление, возвращение себе права хотеть.</p>
+            <div class="mh-reviews__grid">
+                <div class="mh-review reveal">
+                    <span class="mh-review__label">Запрос: пробить финансовый потолок</span>
+                    <p class="mh-review__context">Усилий в работе много, а всё стояло на месте.</p>
+                    <p class="mh-review__quote">"Удалось осознать причину, которая не позволяла деньгам плыть ко мне, и устранить её… Проработать отношения с отцом… Прочувствовать благодарность к себе и своим близким за абсолютно всё."</p>
+                </div>
+                <div class="mh-review reveal">
+                    <span class="mh-review__label">Запрос: апатия и отношения с партнёром</span>
+                    <p class="mh-review__quote">"Я прошла этот курс полтора месяца назад, и с тех пор ни одной ссоры с партнёром… Я не могла заставить себя устроиться на работу где-то уже 3 года… Завтра мой первый рабочий день :)"</p>
+                </div>
+                <div class="mh-review reveal">
+                    <span class="mh-review__label">Запрос: один и тот же сценарий по кругу</span>
+                    <p class="mh-review__quote">"У меня волшебным образом перестала болеть душа, и внутри я обрела состояние покоя и свободы!"</p>
+                </div>
+            </div>
+            <div class="mh-reviews__more reveal">
+                <a href="https://telegram.me/WakeUp_Komars/206" target="_blank" rel="noopener" class="btn btn--ghost">Все отзывы — в Телеграм →</a>
+            </div>
+            <p class="mh-reviews__foot reveal">Из отзывов о личной работе · дословно · публикуется с согласия. Путь и скорость изменений у каждого свои.</p>
+        </div>
+    </section>
+
+    <!-- ===== ЧЕСТНЫЙ РАЗГОВОР ===== -->
+    <section class="section format-block" id="honest">
+        <div class="container">
+            <h2 class="section__title reveal">Честный разговор</h2>
+            <div class="mh-honest__grid">
+                <div class="mh-honest__card mh-honest__card--no reveal">
+                    <h3>Чего я не обещаю</h3>
+                    <p>Денег с неба и новой жизни за две недели.</p>
+                </div>
+                <div class="mh-honest__card mh-honest__card--yes reveal">
+                    <h3>Что обещаю</h3>
+                    <p>Методику, которая в своё время развернула меня самого, — и все инструменты к ней. Через 14 дней у вас на руках будет:</p>
+                    <ul>
+                        <li>ваш личный узор нехватки, названный по имени: вы будете видеть момент, когда он включается;</li>
+                        <li>четыре пройденные сессии прощения — работа с тем, что держит нехватку на месте;</li>
+                        <li>первый полный цикл проявления на живой цели, от "осознать" до <em>"Сделано!"</em>;</li>
+                        <li>тетрадь Проявления и план на 30 дней, чтобы практика жила дальше без меня.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ДЛЯ КОГО ===== -->
+    <section class="section mh-alt" id="fit">
+        <div class="container">
+            <span class="section__star reveal"><svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg></span>
+            <h2 class="section__title reveal">Для кого это</h2>
+            <div class="mh-fit__grid">
+                <div class="mh-fit__card reveal">
+                    <h3>Это для вас, если</h3>
+                    <p>Тема нехватки отозвалась не умом, а где-то в груди. Вы уже читали, слушали, понимали и даже пробовали, но в жизни это мало что поменяло. Внутри тихо, но ясно звучит: <em>"хочу уже наконец выбраться"</em>.</p>
+                    <p>Тогда эти 14 дней собраны под вас: сначала назовём ваш личный узор, потом уберём то, что его держит, затем вы впервые пройдёте полный путь — от <em>"хочу"</em> до <em>"Сделано!"</em>.</p>
+                </div>
+                <div class="mh-fit__card reveal">
+                    <h3>И, скорее всего, не для вас, если</h3>
+                    <p>Ждёте, что за две недели с неба посыплются деньги. Или хочется, чтобы кто-то пришёл и всё сделал за вас. Я иду рядом и даю метод, но шаги делаете вы сами. Готовым на сто процентов приходить при этом не нужно: хватает небольшой искренней готовности, остальное разворачивается уже в пути.</p>
+                    <p>И отдельное, важное. Если у вас сейчас острый период — свежая потеря, состояние, с которым работают врач или психотерапевт, — сначала позаботьтесь о себе там. Я работаю в коучинговом формате: он дополняет помощь специалистов, но не заменяет её.</p>
+                </div>
+            </div>
+            <div class="mh-fit__door reveal">
+                <p>Если внутри откликнулось лёгкое <em>"да"</em> — не откладывайте его на потом. Напишите мне два слова: <em>"Мне хватает"</em>. Дальше разберёмся вместе.</p>
             </div>
         </div>
     </section>
@@ -953,48 +1112,12 @@
                     <span class="mh-price__value">8&nbsp;900&nbsp;₽</span>
                 </div>
             </div>
-            <p class="mh-price__note reveal">Это цены первого потока: групповой формат я провожу впервые. Следующие потоки будут дороже. Какая ступень открыта прямо сейчас, скажу в личке.</p>
+            <p class="mh-price__note reveal">Это цены первого потока: групповой формат я провожу впервые. Следующие потоки будут дороже. <strong>Сейчас открыта первая ступень: 4&nbsp;900&nbsp;₽.</strong> Когда шесть мест займутся, откроется следующая.</p>
+            <p class="mh-price__note reveal">Набор идёт до 2 августа. Дальше вход закрывается — не потому что "успейте", а потому что 3-го группа стартует вместе.</p>
             <div class="mh-price__cta reveal">
-                <a href="https://telegram.me/komars_soul?text=%D0%9C%D0%BD%D0%B5%20%D1%85%D0%B2%D0%B0%D1%82%D0%B0%D0%B5%D1%82" target="_blank" rel="noopener" class="btn btn--primary btn--lg" onclick="if(typeof ym!=='undefined')ym(108266859,'reachGoal','mh_click_telegram_price')">Узнать свою цену и записаться</a>
+                <a href="https://telegram.me/komars_soul?text=%D0%9C%D0%BD%D0%B5%20%D1%85%D0%B2%D0%B0%D1%82%D0%B0%D0%B5%D1%82" target="_blank" rel="noopener" class="btn btn--primary btn--lg" onclick="if(typeof ym!=='undefined')ym(108266859,'reachGoal','mh_click_telegram_price')">Записаться</a>
             </div>
-        </div>
-    </section>
-
-    <!-- ===== ЧЕСТНЫЙ РАЗГОВОР ===== -->
-    <section class="section format-block mh-alt" id="honest">
-        <div class="container">
-            <h2 class="section__title reveal">Честный разговор</h2>
-            <div class="mh-honest__grid">
-                <div class="mh-honest__card mh-honest__card--no reveal">
-                    <h3>Чего я не обещаю</h3>
-                    <p>Денег с неба и новой жизни за две недели.</p>
-                </div>
-                <div class="mh-honest__card mh-honest__card--yes reveal">
-                    <h3>Что обещаю</h3>
-                    <p>Рабочий метод из моей практики, ежедневные задания и синергию людей рядом.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ДЛЯ КОГО ===== -->
-    <section class="section" id="fit">
-        <div class="container">
-            <span class="section__star reveal"><svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg> <svg class="star-svg" width="16" height="16" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5Z" fill="currentColor"/></svg></span>
-            <h2 class="section__title reveal">Для кого это</h2>
-            <div class="mh-fit__grid">
-                <div class="mh-fit__card reveal">
-                    <h3>Это для вас, если</h3>
-                    <p>Тема нехватки отозвалась не умом, а где-то в груди. Вы уже читали, слушали, понимали и даже пробовали, но в жизни это мало что поменяло. Внутри тихо, но ясно звучит: <em>"хочу уже наконец выбраться"</em>.</p>
-                </div>
-                <div class="mh-fit__card reveal">
-                    <h3>И, скорее всего, не для вас, если</h3>
-                    <p>Ждёте, что за две недели с неба посыплются деньги. Или хочется, чтобы кто-то пришёл и всё сделал за вас. Я иду рядом и даю метод, но шаги делаете вы сами. Готовым на сто процентов приходить при этом не нужно: хватает небольшой искренней готовности, остальное разворачивается уже в пути.</p>
-                </div>
-            </div>
-            <div class="mh-fit__test reveal">
-                <p>И маленький тест по ощущениям. Представьте, что вы уже внутри и завтра приходит первое задание. Что поднимается: лёгкое предвкушение или тяжёлое <em>"надо"</em>? Если первое — это ваше. Если второе — спешить не нужно, и это тоже нормально.</p>
-            </div>
+            <p class="mh-price__self reveal">И если трудность не в том, чтобы найти эту сумму, а в том, чтобы разрешить себе потратить её на себя, — вы не одни. Это та же привычка нехватки. Работать будем в том числе с ней.</p>
         </div>
     </section>
 
@@ -1050,6 +1173,15 @@
                     </div>
                 </div>
                 <div class="faq__item reveal">
+                    <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-8">
+                        <span>Я отношусь к таким вещам скептически. Мне сюда можно?</span>
+                        <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="faq__answer" id="faq-answer-8">
+                        <p>Можно. Верить ни во что не требуется: инструменты письменные, шаги конкретные, а эффект вы оцениваете сами — по замеру в начале и в конце. Скепсис практике не мешает. Мешает только одно: не делать. Среди тех, с кем я работаю, осторожных скептиков хватает — и метод от этого хуже не становится.</p>
+                    </div>
+                </div>
+                <div class="faq__item reveal">
                     <button class="faq__question" aria-expanded="false" aria-controls="faq-answer-5">
                         <span>Как проходит оплата?</span>
                         <svg class="faq__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -1076,7 +1208,7 @@
         <div class="container">
             <div class="footer__cta reveal">
                 <h2>Запись открыта</h2>
-                <p>Чтобы попасть в группу, напишите мне в личку два слова: <em>"Мне хватает"</em>.<br>Я отвечу сам: не бот и не менеджер. Расскажу, что дальше, и отвечу на любые вопросы.</p>
+                <p>Чтобы попасть в группу, напишите мне в личку два слова: <em>"Мне хватает"</em>.<br>Я отвечу сам: не бот и не менеджер. Расскажу, что дальше, и отвечу на любые вопросы.<br>Написать — ещё не значит записаться: можно просто задать вопрос и осмотреться, решение останется за вами.</p>
                 <a href="https://telegram.me/komars_soul?text=%D0%9C%D0%BD%D0%B5%20%D1%85%D0%B2%D0%B0%D1%82%D0%B0%D0%B5%D1%82" target="_blank" rel="noopener" class="btn btn--primary btn--lg" onclick="if(typeof ym!=='undefined')ym(108266859,'reachGoal','mh_click_telegram_final')">
                     Написать "Мне хватает"
                 </a>
