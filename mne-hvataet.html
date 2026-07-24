@@ -730,6 +730,38 @@
             color: var(--text-secondary);
         }
 
+        /* Кнопка "наверх" — справа снизу, появляется после первого экрана */
+        .mh-totop {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 901; /* выше куки-плашки (900) */
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: var(--green);
+            color: #F5F1E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(27, 67, 50, 0.28);
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: opacity 0.35s, transform 0.35s, background 0.3s;
+        }
+        .mh-totop.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .mh-totop:hover { background: #142E21; }
+        @media (max-width: 640px) {
+            .mh-totop { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+        }
+
         /* Метод трёх "П" — одной строкой на десктопе */
         @media (min-width: 861px) {
             .mh-3p { white-space: nowrap; }
@@ -1228,6 +1260,11 @@
         </div>
     </footer>
 
+    <!-- ===== КНОПКА "НАВЕРХ" ===== -->
+    <button class="mh-totop" id="mhToTop" type="button" aria-label="Наверх">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+
     <!-- ===== КУКИ-УВЕДОМЛЕНИЕ ===== -->
     <div class="cookie-notice" id="cookieNotice" hidden>
         <p>Сайт использует файлы cookie для статистики посещений. Подробнее — в <a href="politika-pd.html">Политике обработки персональных данных</a>.</p>
@@ -1290,6 +1327,16 @@
                     mhFrame.src = btn.dataset.src;
                 });
             });
+            // Кнопка "наверх": появляется после первого экрана прокрутки
+            var mhToTop = document.getElementById('mhToTop');
+            if (mhToTop) {
+                window.addEventListener('scroll', function() {
+                    mhToTop.classList.toggle('visible', window.scrollY > window.innerHeight * 1.2);
+                }, { passive: true });
+                mhToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
         })();
     </script>
     <script src="app.js?v=4"></script>
